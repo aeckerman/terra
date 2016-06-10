@@ -9,9 +9,9 @@ class World:
 		self.color = color
 
 	def create(self):
-		self.world = setup(self.width, self.height)
 		bgcolor(self.color)
 		title(self.world)
+		self.world = setup(self.width, self.height)
 
 		return self.world
 
@@ -38,16 +38,16 @@ class Organism:
 
 		return self.organism
 
+	def specs(self):
+		specs = 'Organism: %s\nPosition: %s/%s\nSize: %s' % (self.organism, self.xy[0], self.xy[1], self.size)
+		return specs
+
 	def setspeed(self, speed):
 		self.organism.speed(speed)
 
 	def setcoords(self, xy):
 		self.organism.setx(xy[0])
 		self.organism.sety(xy[1])
-
-	def specs(self):
-		specs = 'Organism: %s\nPosition: %s/%s\nSize: %s' % (self.organism, self.xy[0], self.xy[1], self.size)
-		return specs
 
 
 
